@@ -13,8 +13,10 @@ class RecopilacionService:
             raise RecopilacionNoPublicaError("Solo se pueden clonar recopilaciones públicas")
         usuario = self.usuario_service.obtener_usuario(usuario_id)
         nueva = type(recopilacion)(nuevo_id, recopilacion.nombre + " (copia)", usuario_id)
-        # copiar canciones (shallow copy)
+        # copiar canciones (shallow copy)___
         for c in recopilacion.canciones:
             nueva.canciones.append(c)
         usuario.crear_recopilacion(nueva)
         return nueva
+        # copiar canciones (shallow copy)
+        
