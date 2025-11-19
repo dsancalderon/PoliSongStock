@@ -19,7 +19,7 @@ def demo():
     pedido_svc = PedidoService(vinilo_svc, cancion_svc, proveedor_svc)
 
     # Registrar proveedor y autenticar
-    prov = proveedor_svc.registrar_proveedor(1, "Vinilos S.A.", "ventas@vinilossa.com")
+    prov = proveedor_svc.registrar_proveedor(1, "Vinilos S.A.", "ventas@gmail.co")
     proveedor_svc.autenticar(prov.id)
 
     # Registrar vinilo
@@ -32,7 +32,7 @@ def demo():
     vinilo_svc.asociar_cancion(v.id, c2)
 
     # Registrar usuario y crear recopilacion
-    u = usuario_svc.registrar_usuario(11, "Juan", "juan@example.com")
+    u = usuario_svc.registrar_usuario(11, "Juan", "juan@hotmail.com")
     rec = usuario_svc.crear_recopilacion(11, 301, "Mi mejor playlist")
     rec.agregar_cancion(c1)
     rec.hacer_publica()
