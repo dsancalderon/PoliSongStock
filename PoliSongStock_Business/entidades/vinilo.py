@@ -1,7 +1,7 @@
 from typing import List
 
 class Vinilo:
-    def __init__(self, id: int, nombre: str, artista: str, anio: int, precio: float, stock: int):
+    def _init_(self, id: int, nombre: str, artista: str, anio: int, precio: float, stock: int):
         if precio <= 0:
             raise ValueError("Precio debe ser mayor que 0")
         if stock < 0:
