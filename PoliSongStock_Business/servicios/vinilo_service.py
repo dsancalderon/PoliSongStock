@@ -1,25 +1,22 @@
-from entidades.comic import Comic  # Asegúrate de tener esta clase definida similar a Vinilo
+from entidades.vinilo import Vinilo
 
-class ComicService:
-    def __init__(self):
-        self.comics = {}  # id -> Comic
+class ViniloService:
+    def _init_(self):
+        self.vinilos = {}  # id -> Vinilo
 
-    def registrar_comic(self, id:int, titulo:str, autor:str, anio:int, precio:float, stock:int):
-        """Registra un nuevo cómic en el sistema"""
-        if id in self.comics:
-            raise ValueError("Cómic ya existe")
-        c = Comic(id, titulo, autor, anio, precio, stock)
-        self.comics[id] = c
-        return c
+    def registrar_vinilo(self, id:int, nombre:str, artista:str, anio:int, precio:float, stock:int):
+        if id in self.vinilos:
+            raise ValueError("Vinilo ya existe")
+        v = Vinilo(id, nombre, artista, anio, precio, stock)
+        self.vinilos[id] = v
+        return v
 
-    def asociar_personaje(self, comic_id:int, personaje):
-        """Asocia un personaje al cómic"""
-        if comic_id not in self.comics:
-            raise ValueError("Cómic no encontrado")
-        c = self.comics[comic_id]
-        c.asociar_personaje(personaje)
-        return c
+    def asociar_cancion(self, vinilo_id:int, cancion):
+        if vinilo_id not in self.vinilos:
+            raise ValueError("Vinilo no encontrado")
+        v = self.vinilos[vinilo_id]
+        v.asociar_cancion(cancion)
+        return v
 
     def consultar_disponibles(self):
-        """Devuelve todos los cómics con stock > 0"""
-        return [c for c in self.comics.values() if c.consultar_disponibilidad()]
+        return [v for v in self.vinilos.values() if v.consultar_disponibilidad()]
