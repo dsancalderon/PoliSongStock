@@ -57,5 +57,5 @@ def demo():
     # Simular notificación
     enviar_correo_simulado(u.correo, f"Su pedido {pedido.id} fue confirmado", "Gracias por su compra.")
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     demo()
