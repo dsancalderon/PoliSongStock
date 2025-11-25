@@ -32,7 +32,7 @@ def demo():
     vinilo_svc.asociar_cancion(v.id, c2)
 
     # Registrar usuario y crear recopilacion
-    u = usuario_svc.registrar_usuario(11, "Juan", "juan@hotmail.com")
+    u = usuario_svc.registrar_usuario(11, "Julian", "julian123@hotmail.com")
     rec = usuario_svc.crear_recopilacion(11, 301, "Mi mejor playlist")
     rec.agregar_cancion(c1)
     rec.hacer_publica()
