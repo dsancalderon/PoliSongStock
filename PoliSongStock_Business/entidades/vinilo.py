@@ -10,7 +10,7 @@ class Vinilo:
         self.nombre = nombre
         self.artista = artista
         self.anio = anio
-        self.canciones = []  # list of Cancion
+        self.canciones = []  # list of Canciones
         self.precio = precio
         self.stock = stock
 
