@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de Sesión - Polisongstock</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom right, #2e004f, #570089);
+            color: #fff;
+            text-align: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 20px;
+        }
+
+        .login-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            backdrop-filter: blur(6px);
+        }
+
+        input {
+            width: 85%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #ff0080;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #ff4da6;
+            transform: scale(1.05);
+        }
+
+        section {
+            margin-top: 40px;
+            display: none;
+        }
+
+        .compras, .calendario, .mapa {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 700px;
+            backdrop-filter: blur(5px);
+        }
+
+        iframe {
+            border-radius: 15px;
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🎵 Bienvenido a Polisongstock</h1>
+        <p>Inicia sesión para acceder a tus compras y ubicaciones de vinilos</p>
+    </header>
+
+    <!-- FORMULARIO DE INICIO DE SESIÓN -->
+    <div class="login-box" id="login-box">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="usuario" placeholder="Usuario"><br>
+        <input type="password" id="clave" placeholder="Contraseña"><br>
+        <button onclick="iniciarSesion()">Entrar</button>
+    </div>
+
+    <!-- CONTENIDO QUE APARECE DESPUÉS DE INICIAR SESIÓN -->
+    <section id="contenido">
+        <div class="compras">
+            <h2>🛒 Lista de compras de vinilos</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li>• Thriller – Michael Jackson (1982)</li>
+                <li>• Abbey Road – The Beatles (1969)</li>
+                <li>• Con el Corazón – Yeison Jiménez (2015)</li>
+                <li>• All Eyez On Me – 2Pac (1996)</li>
+            </ul>
+        </div>
+
+        <div class="calendario">
+            <h2>📅 Fecha de compra</h2>
+            <p>Selecciona la fecha en que realizaste tu última compra:</p>
+            <input type="date">
+        </div>
+
+        <div class="mapa">
+            <h2>🗺️ Lugar de compra</h2>
+            <p>Ubicación aproximada donde compraste tus vinilos:</p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.786378231497!2d-74.0720928260146!3d4.639386295358516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99e82b5f2e57%3A0x63df3c5a76f3c4d7!2sBogot%C3%A1%2C%20Colombia!5e0!3m2!1ses!2sco!4v1704730229443!5m2!1ses!2sco" 
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <script>
+        function iniciarSesion() {
+            const user = document.getElementById("usuario").value;
+            const pass = document.getElementById("clave").value;
+
+            if (user !== "" && pass !== "") {
+                document.getElementById("login-box").style.display = "none";
+                document.getElementById("contenido").style.display = "block";
+            } else {
+                alert("Por favor, ingresa usuario y contraseña.");
+            }
+        }
+    </script>
+</body>
+</html>
+
